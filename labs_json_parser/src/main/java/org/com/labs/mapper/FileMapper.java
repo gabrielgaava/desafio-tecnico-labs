@@ -39,7 +39,7 @@ public abstract class FileMapper {
         Order order = new Order(orderId, date);
         User user = new User(userId, useName);
 
-        /* No previous data from this user is stored */
+        /* Previous data from this user is already stored */
         if(hashMap.get(userId) != null) {
 
             User savedUser = hashMap.get(userId);

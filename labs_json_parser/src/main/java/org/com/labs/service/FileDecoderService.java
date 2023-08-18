@@ -3,8 +3,8 @@ package org.com.labs.service;
 import org.com.labs.mapper.FileMapper;
 import org.com.labs.model.User;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
+import java.nio.file.Path;
 import java.util.HashMap;
 
 /**
@@ -12,9 +12,9 @@ import java.util.HashMap;
  * **/
 public class FileDecoderService {
 
-    private final String filePath;
+    private final Path filePath;
 
-    public FileDecoderService(String filePath) {
+    public FileDecoderService(Path filePath) {
         this.filePath = filePath;
     }
 
@@ -25,7 +25,7 @@ public class FileDecoderService {
 
         try {
 
-            BufferedReader reader = new BufferedReader(new FileReader(this.filePath));
+            BufferedReader reader = new BufferedReader(new FileReader(this.filePath.toString()));
             String line = reader.readLine();
             int lineNumber = 1;
 
@@ -38,13 +38,37 @@ public class FileDecoderService {
                 lineNumber++;
             }
 
-            System.out.println(lineNumber + " registros processados!");
+            System.out.println("|> " + lineNumber + " registros processados!");
             return map;
 
         } catch (Exception e) {
-            // TODO: Improve error handling
-            System.out.println("Error!");
+            System.out.println("|> 🚨 Erro ao ler aquivo. Verifique o diretório e tente novamente!");
             return null;
+        }
+
+    }
+
+    /**
+     * Creates the JSON file with de data formatted in the same previous informed path
+     * @param fileContent: The String with the JSON data
+     * **/
+    public void createFile(String fileContent) {
+
+        /* Creating the new file path */
+        String fileName = this.filePath.getFileName().toString().replace("txt", "json");
+        String root = this.filePath.getParent().toString();
+        String newFilePath = root + File.separator + fileName;
+
+        try {
+
+            FileWriter fileWriter = new FileWriter(newFilePath);
+            fileWriter.write(fileContent);
+            fileWriter.close();
+            System.out.println("|> Arquivo formatado gerado em: " + newFilePath);
+
+        } catch (IOException exception) {
+            System.out.println(exception.getMessage());
+            return;
         }
 
     }

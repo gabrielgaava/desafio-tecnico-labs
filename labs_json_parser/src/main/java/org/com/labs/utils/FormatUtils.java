@@ -10,4 +10,11 @@ public abstract class FormatUtils {
         return year + "-" + month + "-" + day;
     }
 
+    public static String tabs(int num) {
+        StringBuilder tab = new StringBuilder();
+        tab.append("\t".repeat(Math.max(0, num)));
+
+        return tab.toString();
+    }
+
 }
