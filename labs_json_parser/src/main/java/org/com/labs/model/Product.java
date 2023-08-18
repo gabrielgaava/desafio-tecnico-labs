@@ -1,7 +1,5 @@
 package org.com.labs.model;
 
-import org.com.labs.utils.FormatUtils;
-
 import java.math.BigDecimal;
 import java.util.Formatter;
 
@@ -12,8 +10,6 @@ public class Product {
     private Integer productId;
 
     private BigDecimal value;
-
-    public Product(){};
 
     public Product(Integer productId, BigDecimal value){
         this.productId = productId;

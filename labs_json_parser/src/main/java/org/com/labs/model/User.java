@@ -15,12 +15,10 @@ public class User {
 
     private HashMap<Integer, Order> orders;
 
-    public User(){};
-
     public User(Integer userId, String name){
         this.userId = userId;
         this.name = name;
-    };
+    }
 
     public Integer getUserId() { return userId; }
 
@@ -61,7 +59,7 @@ public class User {
 
         newOrders.put(order.getOrderId(), order);
         this.orders = newOrders;
-        return;
+
     }
 
     /**

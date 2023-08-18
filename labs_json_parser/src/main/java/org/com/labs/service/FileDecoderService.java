@@ -67,8 +67,7 @@ public class FileDecoderService {
             System.out.println("|> Arquivo formatado gerado em: " + newFilePath);
 
         } catch (IOException exception) {
-            System.out.println(exception.getMessage());
-            return;
+            System.out.println("|> 🚨 Erro ao criar aquivo em .'" + newFilePath + "'. Verifique o diretório e tente novamente!");
         }
 
     }

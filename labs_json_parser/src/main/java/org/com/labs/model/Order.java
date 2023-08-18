@@ -17,12 +17,11 @@ public class Order {
 
     List<Product> products;
 
-    public Order() {};
 
     public Order(Integer orderId, String date) {
         this.orderId = orderId;
         this.date = date;
-    };
+    }
 
     public Integer getOrderId() { return orderId; }
 

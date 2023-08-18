@@ -11,10 +11,7 @@ public abstract class FormatUtils {
     }
 
     public static String tabs(int num) {
-        StringBuilder tab = new StringBuilder();
-        tab.append("\t".repeat(Math.max(0, num)));
-
-        return tab.toString();
+        return "\t".repeat(Math.max(0, num));
     }
 
 }
