@@ -65,15 +65,9 @@ public class Order {
         Formatter formatter = new Formatter(string);
 
         formatter.format(tabs(3) + "{%n");
-
-        if(this.orderId != null)
-            formatter.format(tabs(4) + "\"order_id\": \"%s\",%n", this.orderId);
-
-        if(this.total != null)
-            formatter.format(tabs(4) + "\"total\": \"%s\",%n", this.total.toString());
-
-        if(this.date != null)
-            formatter.format(tabs(4) + "\"date\": \"%s\",%n", this.date);
+        formatter.format(tabs(4) + "\"order_id\": \"%s\",%n", this.orderId);
+        formatter.format(tabs(4) + "\"total\": \"%s\",%n", this.total.toString());
+        formatter.format(tabs(4) + "\"date\": \"%s\",%n", this.date);
 
         if(this.products != null && this.products.size() > 0) {
             formatter.format(tabs(4) + "\"products\": [%n");
