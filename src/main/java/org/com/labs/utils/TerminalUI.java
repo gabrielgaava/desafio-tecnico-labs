@@ -38,7 +38,7 @@ public class TerminalUI {
 
     public boolean getMinified() {
         clear();
-        System.out.println("|> Deseja fazer o minify no arquivo de saída ? (S/N)");
+        System.out.println("|> Deseja fazer o minify no arquivo de saida ? (S/N)");
         String minify = scanner.nextLine().toLowerCase();
 
         if(minify.equals("s")) return true;

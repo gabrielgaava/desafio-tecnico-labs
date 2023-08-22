@@ -14,4 +14,8 @@ public abstract class FormatUtils {
         return "\t".repeat(Math.max(0, num));
     }
 
+    public static String minify(String str) {
+        return str.replaceAll("\\s+", "");
+    }
+
 }

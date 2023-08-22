@@ -3,15 +3,17 @@ package org.com.labs;
 import org.com.labs.mapper.HashMapper;
 import org.com.labs.model.User;
 import org.com.labs.service.FileDecoderService;
+import org.com.labs.utils.FormatUtils;
 import org.com.labs.utils.TerminalUI;
 
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         TerminalUI UI = new TerminalUI(args);
         UI.showAppHeader();
@@ -29,7 +31,7 @@ public class Main {
 
         /* Transcode the HashMap to a JSON File and Minify it */
         String json = HashMapper.toJson(jsonMap);
-        if(isMinified) json = json.replaceAll("\\s+", "");
+        if(isMinified) json = FormatUtils.minify(json);
         decoder.createFile(json);
 
     }

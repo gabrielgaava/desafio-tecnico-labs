@@ -9,6 +9,14 @@
     <version>1.0</version>
     <packaging>jar</packaging>
     <name>Labs Json Parser</name>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>

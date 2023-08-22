@@ -1,5 +1,4 @@
 # Desafio Tecnico Labs
-> [Link](docs/) com instruções de como executar o projeto
 
 ## Cenário do projeto
 Temos uma demanda para integrar dois sistemas. Um desses sistemas é legado e possui um arquivo de pedidos desnormalizados. Sendo assim, precisamos transforma-los em um arquivo json normalizado para então enviar para o outro sistema. Para que isso seja possível, precisamos satisfazer alguns requisitos.
@@ -49,3 +48,27 @@ O formato de saída esperado deve seguir a seguinte estrutura:
   }
 ]
 ```
+
+## 🚀 Executando a aplicação
+
+### Pré-requisitos
+Este projeto foi construído utilizando o Maven e Java 11 com o mínimo de bibliotecas possíveis. Sendo assim, ambos são necessarios para executar o projeto.
+
+### Compilação
+Para compilar o projeto basta rodar o comando `mvn clean install`. O `.jar` será gerado na pasta `target`.
+
+### Executando
+Para executar o sistema, basta entrar na pasta target com `cd ./target` e
+então execute o jar, podendo passar o diretório/arquivo a ser analisado. Por exemplo:
+`java -jar labs_json_parser-1.0.jar C:\User\Documents\data_1.txt`. Case o diretório
+não seja informado pelos argumentos o programa irá solicitar durante a execução.
+
+![Executando Aplicacao](./assets/RunningApp.gif)
+
+### Saida de Dados:
+Um novo arquivo `.json` será gerado no mesmo diretório informado durante
+o início da aplicação com os dados formatados. 
+
+## 🧪 Executando testes únitarios
+Os testes únitarios foram desenvolvidos utilizando o JUnit 4. Para executalos, 
+basta digitar `mvn teste` na pasta raiz do projeto `labs_json_parser`

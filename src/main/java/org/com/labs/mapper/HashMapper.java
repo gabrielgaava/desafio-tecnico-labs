@@ -8,14 +8,14 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Classe responsavel por mappear e transformar os dados do HashMap de Usuarios
- * para uma String no formato JSON.
+ * Class responsable for map and transform the data from the HashMap of
+ * users to a String formated on JSON.
  * **/
 public abstract class HashMapper {
 
     /**
-     * @param map: O HashMap dos dados previamentes tratados
-     * @return JSON String contendo o dados formatados
+     * @param map: The HashMap that stores the previous treated data
+     * @return A JSON string containing the formatted data
      * **/
     public static String toJson(HashMap<Integer, User> map) {
 
@@ -37,7 +37,7 @@ public abstract class HashMapper {
             else formatter.format(",%n");
         }
 
-        formatter.format("]%n");
+        formatter.format("]");
         formatter.flush();
         return builder.toString();
 
