@@ -18,7 +18,7 @@ O arquivo do sistema legado possui uma estrutura em que cada linha representa um
 | valor produto | 12       | decimal             |
 | data compra   | 8        | numérico (yyyymmdd) |
 
-![Arquivo De Dados](./docs/Data.gif)
+![Arquivo De Dados](./assets/Data.gif)
 
 ### Saída de Dados
 O formato de saída esperado deve seguir a seguinte estrutura:
@@ -72,3 +72,5 @@ o início da aplicação com os dados formatados.
 ## 🧪 Executando testes únitarios
 Os testes únitarios foram desenvolvidos utilizando o JUnit 4. Para executalos, 
 basta digitar `mvn teste` na pasta raiz do projeto `labs_json_parser`
+
+![Output_Testes](./assets/Test.gif)
